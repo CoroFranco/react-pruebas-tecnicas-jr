@@ -1,0 +1,74 @@
+@import 'normalize.css';
+@import 'reset-css/reset.css';
+
+
+body {
+    background-color: #222;
+    color: #fff;
+}
+button {
+    background-color: none;
+    border: none;
+    cursor: pointer;
+}
+
+button:nth-child(1){
+    margin-right: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: 95%;
+    margin: auto;
+}
+
+.todosContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 20px;
+}
+
+li {
+    list-style: none;
+}
+
+.todosContainer div {
+    max-width: 200px;
+    width: 200px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: 1px solid black;
+    padding: 10px 4px;
+}
+
+@media (max-width: 300px) {
+    .todosContainer{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.todosContainer li {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+section {
+    text-align: center;
+}
+
+section form {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    margin: auto;
+    gap: 20px
+}
