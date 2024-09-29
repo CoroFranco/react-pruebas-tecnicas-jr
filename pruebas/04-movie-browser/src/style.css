@@ -1,0 +1,52 @@
+body {
+    background-color: #222;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column; /* Para que se apile en pantallas pequeñas */
+    max-width: 1200px;
+    margin: auto;
+    width: 95%;
+    gap: 16px; /* Añadir un pequeño espacio entre el formulario y la galería */
+  }
+  
+  main form {
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+    margin: auto;
+    gap: 16px;
+  }
+  
+  /* Galería para pantallas grandes */
+  .gallery {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    grid-gap: 16px;
+  }
+
+  .gallery img:hover {
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1.1);
+  }
+  
+  /* Media queries para pantallas medianas */
+  @media (max-width: 768px) {
+    .gallery {
+      grid-template-columns: 1fr; /* 1 columna en pantallas medianas */
+    }
+  
+    main {
+      flex-direction: column; /* Asegurar que se apilen los elementos */
+    }
+  
+    main form {
+      max-width: 100%; /* Formulario ocupará todo el ancho disponible */
+      width: 100%;
+    }
+  }
