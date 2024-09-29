@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import './style.css'
 const MOVIE_INFO_ENDPOINT = 'https://www.omdbapi.com/?apikey=132e52e6&s='
 
@@ -20,7 +20,7 @@ export function App () {
     fetchMovieInfo(1)
   }
 
-  const fetchMovieInfo = async (page) => {
+  const fetchMovieInfo = useCallback(async (page) => {
     if (!title.trim()) return
     try {
       setError(null)
@@ -51,7 +51,11 @@ export function App () {
       setMovie([])
       setLoading(false)
     }
-  }
+  }, [title])
+
+  useEffect(() => {
+    fetchMovieInfo(1)
+  }, [fetchMovieInfo])
 
   const handlePageChange = (newPage) => {
     if (newPage > 0 && newPage <= totalPages) {
@@ -62,7 +66,8 @@ export function App () {
   return (
     <main>
       <form onSubmit={searchMovieInfo}>
-        <textarea onChange={updateTitle} value={title} name='' id='' />
+        <label htmlFor='movieTitle'>Escribe nombre de la pelicula:</label>
+        <input type='text' onChange={updateTitle} value={title} id='movieTitle' />
         <button type='submit'>Buscar</button>
       </form>
       {
