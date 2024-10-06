@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './style.css'
 import { useCityWeather } from './hooks/useCityWeather'
 
@@ -19,7 +19,6 @@ export function App () {
     <main>
       <h1>Buscador del Clima</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='cityInput'>Nombre de la ciudad:</label>
         <input
           id='cityInput'
           type='text'
@@ -39,9 +38,9 @@ export function App () {
           <h2>{cityWeather.name}</h2>
           <div>
             <ul>
-              <li><p>Temperatura: {cityWeather.temp}°C</p></li>
-              <li><p>Humedad: {cityWeather.humidity}</p></li>
-              <li><p>Velocidad del viento 🎐 : {cityWeather.windSpeed}</p></li>
+              <li><p> 🌡️ Temperatura: {cityWeather.temp}°C</p></li>
+              <li><p> 💧 Humedad: {cityWeather.humidity}</p></li>
+              <li><p> 🌬️ Velocidad del viento: {cityWeather.windSpeed}</p></li>
 
             </ul>
           </div>

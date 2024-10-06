@@ -1,6 +1,6 @@
 import { useState } from 'react'
 const WEATHER_API_PREFIX = 'https://api.openweathermap.org/data/2.5/weather?q='
-const API_KEY = '&appid=247ed32f901c0ef47c29ab97a3ea7377&units=metric'
+const API_KEY = '&appid=4df9ddad4d7ee1f1dc58a1e2d80c5202&units=metric'
 
 export const useCityWeather = () => {
   const [cityWeather, setCityWeather] = useState(null)
