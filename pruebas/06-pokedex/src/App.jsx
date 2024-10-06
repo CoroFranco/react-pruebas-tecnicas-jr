@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './styles.css'
 import InfiniteScroll from 'react-infinite-scroll-component'
+import './gsap.js'
 
 const POKEDEX_API_URL = 'https://pokeapi.co/api/v2/pokemon/'
 
@@ -50,9 +51,7 @@ export function App () {
 
   // Cargar más Pokémon con un retraso
   const loadMorePokemon = () => {
-    setTimeout(() => {
-      fetchPokemon()
-    }, 1000) // Retraso de 1 segundo
+    fetchPokemon()
   }
 
   // Manejar la búsqueda del Pokémon
@@ -82,7 +81,7 @@ export function App () {
         {
 
                     pokemon.map((poke, index) => (
-                      <div key={index}>
+                      <div className='pokemonCard' key={index}>
                         <h2>{poke.name}</h2>
                         <img
                           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.url.split('/')[6]}.png`}

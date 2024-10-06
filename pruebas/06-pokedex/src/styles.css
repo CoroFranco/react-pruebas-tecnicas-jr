@@ -4,7 +4,6 @@ section {
     max-width: 1200px;
     gap: 16px;
     margin: auto;
-
     div {
         display: flex;
         justify-content: center;
